@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const Nav = styled.nav`
+   
    height: 70px;
    background: #090b13;
    display: flex;
    align-items: center;
    padding: 0 36px;
    overflow-x: hidden;
+   justify-content: space-between;
 `;
 
 export const Logo = styled.img`
@@ -16,8 +18,11 @@ export const Logo = styled.img`
 export const NavMenu = styled.div`
    display: flex;
    flex: 1;
+   flex-flow: row nowrap;
    align-items: center;
    margin-left: 50px;
+   position: relative;
+
 
    a {
     display: flex;
@@ -61,8 +66,57 @@ export const NavMenu = styled.div`
 `;
 
 export const UserImg = styled.img`
-   width: 50px;
-   height: 50px;
+   height: 60px;
+   width: 60px;
    border-radius: 50%;
    cursor: pointer;
+`;
+
+export const Login = styled.button`
+   height: 40px;
+   width: 90px;
+   border-radius: 5px;
+   background: black;
+   border: 1px solid rgb(249, 249, 249);
+   color: rgb(249, 249, 249);
+   text-transform: uppercase;
+   letter-spacing: 1.6px;
+   font-size: 15px;
+   font-weight: 500;
+
+   &:hover {
+    background: rgb(249, 249, 249);
+    color: black;
+   }
+`;
+
+export const DropDown = styled.div`
+   position: relative;
+   right: 20px;
+   padding: 10px;
+   background: rgb(19, 19, 19);
+   border: 1px solid rgb(151, 151, 151, 0.34);
+   box-shadow: rgb( 0 0 0 / 50%) 0px 0px 18px 0px;
+   font-size: 14px;
+   letter-spacing: 3px;
+   width: 100px;
+   opacity: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+`;
+
+export const LogOut = styled.div`
+   position: absolute;
+   top: 5px;
+   right: 0px;
+   cursor: pointer;
+
+   
+   &:hover {
+    ${DropDown} {
+        opacity: 1;
+        transition-duration: 1s;
+    }
+   }
 `;
